@@ -70,8 +70,11 @@ reflect the new ceiling.
 
 ## Project structure
 
+The project root **is** this `mailroom` folder (not a nested subfolder) —
+`.git` and the uv project both live here directly:
+
 ```
-mailroom-live/
+mailroom/                (a.k.a. mailroom-live project root)
 ├── main.py            # entry point
 ├── pyproject.toml      # project metadata + dependencies (managed by uv)
 ├── uv.lock             # exact locked dependency versions (do not hand-edit)
