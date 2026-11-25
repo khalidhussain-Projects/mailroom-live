@@ -13,9 +13,12 @@ fundamentals in Python, one concept at a time.
 
 ## Current concept level — IMPORTANT, read before writing any code
 
-The learner has completed lessons **13.1 through 13.7** of the course. Any
-code written in this repo, by a human or an AI assistant, **must only use
-concepts covered through 13.7**:
+The learner has completed lessons **13.1 through 13.7**, plus **reading
+files** (13.8) and **reading `sys.argv` command-line arguments** (introduced
+ad hoc to build the `subscribers` command — not a numbered lesson in the
+course, but taught in plain terms before use). Any code written in this
+repo, by a human or an AI assistant, **must only use concepts covered
+through this point**:
 
 Allowed so far:
 - Values, types, and variables (13.3)
@@ -25,10 +28,13 @@ Allowed so far:
   signature as a "contract" (13.6)
 - Lists and dictionaries: creation, indexing, lookups, missing keys, sorting
   (13.7)
+- Reading files: `open()`, `.read()` (13.8)
+- Command-line arguments: `import sys`, `sys.argv` as a list of the words
+  typed after the program name
 
 Explicitly **not yet covered — do not use until the learner has done the
 corresponding lesson**:
-- Reading/writing files (comes in 13.8)
+- Writing files (13.8 covers reading; writing hasn't been taught yet)
 - Working with dates (13.9)
 - try/except error handling (not yet covered — 13.10 is about *reading*
   errors/tracebacks, not handling them)
@@ -75,7 +81,9 @@ The project root **is** this `mailroom` folder (not a nested subfolder) —
 
 ```
 mailroom/                (a.k.a. mailroom-live project root)
-├── main.py            # entry point
+├── main.py            # entry point; imports from mailroom.py
+├── mailroom.py         # subscriber-counting functions (read_subscribers, count_emails, count_group)
+├── check.py            # standalone tests for the subscriber-counting logic
 ├── pyproject.toml      # project metadata + dependencies (managed by uv)
 ├── uv.lock             # exact locked dependency versions (do not hand-edit)
 ├── .python-version     # pins the Python version for uv
